@@ -12,6 +12,10 @@ module.exports = {
 
   // default account to select in case no account is provided by the userConfig
   // parameter
-  account: 0
+  account: 0,
 
+  // Use Ledger to sign transactions
+  isLedger: true,
+  // Ledger path for account
+  ledgerPath: "44'/60'/0'"
 }

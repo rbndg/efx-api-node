@@ -43,6 +43,10 @@ describe('~ efx-api-node', async () => {
 
   })
 
+  describe('Ledger API', () => {
+    require('./ledger')
+  })
+
   // TODO: update mocked contracts, compile and deploy to ganache on every
   // test, this way we don't need a ropsten node running to test the blockchain
   // calls
@@ -77,4 +81,6 @@ describe('~ efx-api-node', async () => {
   describe('ETH calls', () => {
     require('./eth.js')
   })
+
+
 })

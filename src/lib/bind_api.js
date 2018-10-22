@@ -40,6 +40,14 @@ module.exports = () => {
     }
   }
 
+  // efx.ledger
+  efx.ledger = {
+    sign: require('../api/ledger/sign'),
+    transport: require('../api/ledger/transport'),
+    willShowConfirmation: require('../api/ledger/willShowConfirmation'),
+    resetRequestCount: require('../api/ledger/resetRequestCount')
+
+  }
   // efx.eth functions
   efx.eth = {
     call: compose(require('../api/eth/call')),
