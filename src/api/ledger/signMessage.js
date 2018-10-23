@@ -4,7 +4,7 @@ const Tx = require('ethereumjs-tx')
 module.exports = async (efx, toSign, path) => {
   const rawTx = txDecoder.decodeTx(toSign)
 
-  const ledgerTx = await efx.ledgerTransport.signTransaction(toSign, path)
+  const ledgerTx = await efx.ledgerTransport.signPersonalMessage(path, toSign)
 
   efx.set('resetRequestCount', !efx.get('resetRequestCount'))
 

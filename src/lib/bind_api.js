@@ -42,11 +42,8 @@ module.exports = () => {
 
   // efx.ledger
   efx.ledger = {
-    transport: require('../api/ledger/transport'),
     signMessage: require('../api/ledger/signMessage'),
     willShowConfirmation: require('../api/ledger/willShowConfirmation'),
-    resetRequestCount: require('../api/ledger/resetRequestCount')
-
   }
   // efx.eth functions
   efx.eth = {
