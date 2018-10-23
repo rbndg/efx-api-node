@@ -1,6 +1,7 @@
 const {signatureUtils, orderHashUtils} = require('@0xproject/order-utils')
 
 module.exports = async (efx, order) => {
+  //TODO: Sign with ledger here
   const orderHash = orderHashUtils.getOrderHashHex(order)
 
   const signerType = efx.isMetaMask ? 'METAMASK' : 'DEFAULT'
