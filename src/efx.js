@@ -23,8 +23,8 @@ module.exports = async (web3, userConfig = {}) => {
   // ethfinex exchange config
   const exchangeConf = await efx.getConfig()
 
-  //user config has priority
-  efx.config = Object.assign({}, defaultConfig, exchangeConf, userConfig )
+  // user config has priority
+  efx.config = Object.assign({}, defaultConfig, exchangeConf, userConfig)
 
   // working towards being as compatible as possible
   efx.isBrowser = typeof window !== 'undefined'
@@ -33,6 +33,10 @@ module.exports = async (web3, userConfig = {}) => {
 
   if (efx.isBrowser && window.web3) {
     efx.isMetaMask = window.web3.currentProvider.isMetaMask
+  }
+
+  if (efx.config.isLedger) {
+    efx.ledgerTransport = await efx.ledger.transport()
   }
 
   // If no web3 is provided we will fallback to:
