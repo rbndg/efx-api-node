@@ -3,7 +3,6 @@ const defaultConfig = require('./config')
 const Web3 = require('web3')
 const aware = require('aware')
 const BigNumber = require('bignumber.js')
-const LedgerSubprovider = require('@0x/subproviders').LedgerSubprovider
 
 BigNumber.config({ EXPONENTIAL_AT: 1e+9 })
 
@@ -37,8 +36,6 @@ module.exports = async (web3, userConfig = {}) => {
     efx.isMetaMask = window.web3.currentProvider.isMetaMask
   }
 
-  let ledgerSubprovider
-
   // If no web3 is provided we will fallback to:
   // - window.web3.currentProvider object i.e. user is using MetaMask
   // - http://localhost:8545
@@ -52,12 +49,12 @@ module.exports = async (web3, userConfig = {}) => {
     }
 
     if (efx.config.isLedger) {
-      efx.ledgerTransport = efx.ledger.web3(Web3, providerUrl, efx)
+      web3 = await efx.ledger.web3(efx, Web3, {rpcUrl : providerUrl, networkId: 1})
     } else {
       web3 = new Web3(providerUrl)
     }
   }
-
+  
   // save web3 instance int it
   efx.web3 = web3
 

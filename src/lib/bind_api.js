@@ -42,8 +42,7 @@ module.exports = () => {
 
   // efx.ledger
   efx.ledger = {
-    signMessage: require('../api/ledger/signMessage'),
-    willShowConfirmation: require('../api/ledger/willShowConfirmation'),
+    web3: require('../api/ledger/ledger_web3'),
   }
   // efx.eth functions
   efx.eth = {

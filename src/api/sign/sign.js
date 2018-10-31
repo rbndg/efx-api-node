@@ -7,9 +7,7 @@
 
 module.exports = (efx, toSign) => {
   // metamask will take care of the 3rd parameter, "password"
-  if (efx.config.isLedger) {
-    return efx.ledger.signMessage(toSign, efx.config.ledgerPath)
-  } else if (efx.web3.currentProvider.isMetaMask) {
+  if (efx.web3.currentProvider.isMetaMask) {
     return efx.web3.eth.personal.sign(toSign, efx.get('account'))
   } else {
     return efx.web3.eth.sign(toSign, efx.get('account'))

@@ -2,8 +2,8 @@
 
 const {assert} = require('chai')
 
-const deploy = require('./contracts/deploy')
-const deployed = require('./contracts/deployed')
+const deploy = require('./fixtures/contracts/deploy')
+const deployed = require('./fixtures/contracts/deployed')
 
 it('Deploy WETH9_ contract', async () => {
   // you need to run the following command in order to generate this json:

@@ -13,7 +13,7 @@ before(async () => {
 it('efx.account.select(0) // first account is selected by default', () => {
   // you can select account using an address or an account index
   // it will return null if address isnt found on the list of accounts
-  efx.account.select('0x97EBb3391B30F495CE8cB97857dB9B72D3e9DbCB')
+  // efx.account.select('0x97EBb3391B30F495CE8cB97857dB9B72D3e9DbCB')
 
   // you can also select it using an account index
   efx.account.select(0)

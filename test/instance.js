@@ -27,5 +27,5 @@ module.exports = async () => {
 
   config.api = 'https://test.ethfinex.com/trustless/v1'
 
-  return EFX(web3, config)
+  return EFX(null, config)
 }
