@@ -17,7 +17,6 @@ describe('~ efx-api-node', async () => {
   nock.cleanAll()
 
   it('efx = await EFX(web3) // create an instance without throwing', async () => {
-
     //nock.recorder.rec()
 
     mockGetConf()
@@ -43,9 +42,9 @@ describe('~ efx-api-node', async () => {
 
   })
 
-  describe('Ledger API', () => {
-    require('./ledger')
-  })
+  // describe('Ledger API', () => {
+  //   require('./ledger')
+  // })
 
   // TODO: update mocked contracts, compile and deploy to ganache on every
   // test, this way we don't need a ropsten node running to test the blockchain
