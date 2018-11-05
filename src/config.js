@@ -8,8 +8,10 @@ module.exports = {
 
   // in case no provider is provided we will try connecting to the this default
   // address
-  defaultProvider: 'http://localhost:8545',
+  defaultProvider: 'http://192.168.255.6:8545',
 
+  // Ethereum Network Id
+  ethNetworkId: 1,
   // default account to select in case no account is provided by the userConfig
   // parameter
   account: 0,
@@ -18,4 +20,5 @@ module.exports = {
   isLedger: true,
   // Ledger path for account
   ledgerPath: "44'/60'/0'"
+
 }

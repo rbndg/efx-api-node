@@ -10,7 +10,11 @@ before(async () => {
   efx = await instance()
 })
 
-it('efx.ledger.willShowConfirmation()', async () => {
-  const result = await efx.ledger.willShowConfirmation(efx)
-  assert.ok(result.willShowConfirmation)
+it('efx.ledger.willConnect()', async () => {
+  if (!efx.config.isLedger) {
+    console.log('Skipping... not using ledger')
+    return
+  }
+  const accounts = await efx.web3.eth.getAccounts()
+  assert.ok(accounts.length > 0)
 })
